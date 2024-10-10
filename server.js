@@ -3,7 +3,11 @@ const items = require('./data')
 const app = express();
 const PORT = process.env.PORT || 3000; // Port to run the server
 
+const cors = require('cors');
 
+
+// Enable CORS for all origins
+app.use(cors());
 
 // Endpoint to get all items
 app.get('/items', (req, res) => {
